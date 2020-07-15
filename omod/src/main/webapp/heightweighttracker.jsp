@@ -673,18 +673,18 @@
 		var sd3negWFL = [];
 		
 		<c:forEach var="o" items="${formData.obsMapper.weightForLength}">
-			dataWeightForLength.push([ ${o.weight} , ${o.height} ]);
+			dataWeightForLength.push([ ${o.height} , ${o.weight} ]);
 		</c:forEach>
 		
 		<c:choose>
 	      	<c:when test="${formData.gender == 'F'}">
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthGirlsSD3}">
-					sd3WFL.push([ ${o.weight} , ${o.height} ]);
+					sd3WFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:when>
 	      	<c:otherwise>
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthBoysSD3}">
-					sd3WFL.push([ ${o.weight} , ${o.height} ]);
+					sd3WFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:otherwise>
 	    </c:choose>
@@ -692,12 +692,12 @@
 	    <c:choose>
 	      	<c:when test="${formData.gender == 'F'}">
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthGirlsSD2}">
-					sd2WFL.push([ ${o.weight} , ${o.height} ]);
+					sd2WFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:when>
 	      	<c:otherwise>
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthBoysSD2}">
-					sd2WFL.push([ ${o.weight} , ${o.height} ]);
+					sd2WFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:otherwise>
 		</c:choose>
@@ -705,12 +705,12 @@
 	    <c:choose>
 	      	<c:when test="${formData.gender == 'F'}">
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthGirlsSD0}">
-					sd0WFL.push([ ${o.weight} , ${o.height} ]);
+					sd0WFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:when>
 	      	<c:otherwise>
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthBoysSD0}">
-					sd0WFL.push([ ${o.weight} , ${o.height} ]);
+					sd0WFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:otherwise>
 		</c:choose>
@@ -718,12 +718,12 @@
 	    <c:choose>
 	      	<c:when test="${formData.gender == 'F'}">
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthGirlsSD2neg}">
-					sd2negWFL.push([ ${o.weight} , ${o.height} ]);
+					sd2negWFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:when>
 	      	<c:otherwise>
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthBoysSD2neg}">
-					sd2negWFL.push([ ${o.weight} , ${o.height} ]);
+					sd2negWFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:otherwise>
 		</c:choose>	
@@ -731,32 +731,32 @@
 	    <c:choose>
 	      	<c:when test="${formData.gender == 'F'}">
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthGirlsSD3neg}">
-					sd3negWFL.push([ ${o.weight} , ${o.height} ]);
+					sd3negWFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:when>
 	      	<c:otherwise>
 		      	<c:forEach var="o" items="${formData.whoMapping.weightForLengthBoysSD3neg}">
-					sd3negWFL.push([ ${o.weight} , ${o.height} ]);
+					sd3negWFL.push([ ${o.height} , ${o.weight} ]);
 				</c:forEach>
 	      	</c:otherwise>
 		</c:choose>
 
 		// setup background areas
 	    var markingsWeightForLength = [
-	        { yaxis: { to: 110 } }
+	        { xaxis: { to: 110 } }
 	    ];
 
 		var optionsWeightForLength = {
- 			xaxis: {
- 				min: 0,
- 				max: 26,
- 				tickSize: 1,
- 				},
-			yaxis: { 
+			xaxis: {
 				min: 40, 
 				max: 110, 
 				ticks: [[40, ""], [45, "45"], [50, "50"], [55, "55"], [60, "60"], [65, "65"], [70, "70"], [75, "75"], [80, "80"], [85, "85"], [90, "90"], [95, "95"], [100, "100"], [105, "105"], [110, "110"]]
 			},
+ 			yaxis: {
+ 				min: 0,
+ 				max: 26,
+ 				tickSize: 1,
+ 				},
 			grid: { markings: markingsWeightForLength },
 			points: [{ show: false }, { show: false}, { show: false}, { show: false}, { show: false}, { show: true}],
 			lines: { show: true },
@@ -1537,7 +1537,7 @@
 		<table class="section-graph">
 			<tbody>
 				<tr>
-					<td align="left">Height (cm)</td>	
+					<td align="left">Weight (kg)</td>
 					<td align="center">
 						<div id="obsGraphWeightForLength" class="lengthForAge"></div>
 					</td>
@@ -1545,7 +1545,7 @@
 				<tr>
 					<td></td>
 					<td align="center">
-						Weight (kg)
+						Height (cm)
 					</td>
 				</tr>
 			</tbody>
